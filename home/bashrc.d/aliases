@@ -1,0 +1,13 @@
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias .....='cd ../../../..'
+
+alias dl='cd ~/Downloads'
+alias dt='cd ~/Desktop'
+alias ws='cd ~/workspace'
+
+alias vim='nvim'
+alias vi='vim'
+
+alias ls='exa -F --color=never'

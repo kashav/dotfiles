@@ -1,0 +1,20 @@
+$include /etc/inputrc
+
+# Never ring terminal bell
+set bell-style none
+
+# Ignore letter case in TAB autocompletion
+set completion-ignore-case on
+
+# Show all autocomplete results at once
+set page-completions off
+
+# List all possible matches
+set show-all-if-ambiguous on
+
+# Consider the text after the cursor when autocompleting
+set skip-completed-text on
+
+# Use typed text as prefix when searching history with Up/Down
+"\e[A": history-search-backward
+"\e[B": history-search-forward

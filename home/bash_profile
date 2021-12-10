@@ -1,0 +1,18 @@
+if [ -f ~/.bashrc ]; then
+	. ~/.bashrc
+fi
+
+# Autocorrect typos in path names when using `cd`.
+shopt -s cdspell
+
+# Append to the history file, rather than overwriting it.
+shopt -s histappend
+
+# Don't automatically run history commands.
+shopt -s histverify
+
+# Case-insensitive globbing (used in pathname expansion).
+shopt -s nocaseglob
+
+# Enable forward-i-search
+stty -ixon

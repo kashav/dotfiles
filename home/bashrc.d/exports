@@ -1,0 +1,37 @@
+export EDITOR=vim
+
+export GIT_PS1_SHOWDIRTYSTATE=true
+export GIT_PS1_SHOWSTASHSTATE=true
+export GIT_PS1_SHOWUNTRACKEDFILES=true
+export GIT_PS1_SHOWUPSTREAM=auto
+
+export GPG_TTY=$(tty)
+
+export GEM_HOME="${HOME}/.gems"
+export GOPATH="${HOME}/go"
+
+export HISTSIZE=32768
+export HISTFILESIZE=$HISTSIZE
+export HISTCONTROL=ignoreboth
+
+export MANPAGER="less -X"
+
+export NODE_REPL_HISTORY=~/.node_history
+export NODE_REPL_HISTORY_SIZE=32768
+export NODE_REPL_MODE=sloppy
+
+export PYTHONIOENCODING="UTF-8"
+
+for bin in "${HOME}/.local/bin" \
+           "${HOME}/bin" \
+           "${HOME}/.cargo/bin" \
+           "${GOPATH}/bin" \
+           "${GEM_HOME}/bin"; do
+  if [[ -d "$bin" ]]; then
+    if ! [[ "$PATH" =~ "$bin" ]]; then
+      PATH="$bin:$PATH"
+    fi
+  fi
+done
+unset bin
+export PATH

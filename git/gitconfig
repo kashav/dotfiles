@@ -1,0 +1,57 @@
+[alias]
+    # Append commit using previous commit message.
+    amend = commit --amend --reuse-message=HEAD
+
+    # Checkout a branch, creating it if doesn't exist.
+    go = "!f() { git checkout -b \"$1\" 2> /dev/null || git checkout \"$1\"; }; f"
+
+    # Interactive rebase with the given offset.
+    reb = "!r() { git rebase -i HEAD~$1; }; r"
+
+    # Misc. log shortcuts.
+    filelog = log -u
+    lo = log --pretty=oneline -n 20 --graph --abbrev-commit
+
+    # Unstage any files that have been added to staging.
+    uncommit = reset --soft HEAD^
+    unstage = reset HEAD
+
+    # Mark/unmark a file as "assume unchanged" to make Git treat it as though
+    # there are no changes to it. Useful for temp. changes to tracked files.
+    assume = update-index --assume-unchanged
+    unassume = update-index --no-assume-unchanged
+    assumed = "!git ls-files -v | grep ^h | cut -c 3-"
+
+    # Show all contributors and their contribution counts.
+    contributors = shortlog --summary --numbered
+[apply]
+    whitespace = fix
+[core]
+    excludesfile = ~/.gitignore
+    attributesfile = ~/.gitattributes
+    whitespace = space-before-tab,-indent-with-non-tab,trailing-space
+    trustctime = false
+    precomposeunicode = false
+[color]
+    ui = auto
+[color "branch"]
+    current = yellow reverse
+    local = yellow
+    remote = green
+[color "diff"]
+    meta = yellow bold
+    frag = magenta bold
+    old = red
+    new = green
+[color "status"]
+    added = yellow
+    changed = green
+    untracked = red
+[diff]
+    mnemonicprefix = true
+[merge]
+    log = true
+[push]
+    followTags = true
+[url "ssh://git@github.com/"]
+    insteadOf = https://github.com/
