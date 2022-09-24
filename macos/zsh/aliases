@@ -1,0 +1,19 @@
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias .....='cd ../../../..'
+
+alias dl='cd ~/Downloads'
+alias dt='cd ~/Desktop'
+alias ws='cd ~/workspace'
+
+alias vim='nvim'
+alias vi='vim'
+
+alias desktop-hide='defaults write com.apple.finder CreateDesktop -bool false && killall Finder'
+alias desktop-show='defaults write com.apple.finder CreateDesktop -bool true && killall Finder'
+
+alias dots-hide='defaults write com.apple.finder AppleShowAllFiles -bool false && killall Finder'
+alias dots-show='defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder'
+
+alias find='gfind'

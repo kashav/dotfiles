@@ -1,0 +1,5 @@
+# via github.com/Homebrew/brew/blob/master/Library/Homebrew/cmd/shellenv.sh
+# This doesn't work when this is in ~/.zprofile. I don't know why.
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
+source "$HOME/.aliases"
