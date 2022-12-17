@@ -2,6 +2,7 @@
 set -euo pipefail
 
 sudo dnf -y install \
+  autoconf \
   clang \
   clang-format \
   gcc \

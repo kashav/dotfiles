@@ -33,6 +33,7 @@ if !isdirectory(undodir)
 endif
 set undofile
 let &undodir=undodir
+unlet undodir
 
 nnoremap j gj
 nnoremap k gk
